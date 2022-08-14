@@ -8,18 +8,18 @@
 ## Libraries
 
 VueJS
-```
-<script src="https://fwd.dev/js/vue.js"></script>
+```python
+<script src="//fwd.dev/js/vue.js"></script>
 ```
 
 Axios 
-```
-<script src="https://fwd.dev/js/axios.js"></script>
+```python
+<script src="//fwd.dev/js/axios.js"></script>
 ```
 
 QrCode 
-```
-<script src="https://fwd.dev/js/qrcode.js"></script>
+```python
+<script src="//fwd.dev/js/qrcode.js"></script>
 ```
 
 ## Contributing
