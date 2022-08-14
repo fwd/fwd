@@ -1,0 +1,326 @@
+<!--
+
+ ________  ____      ____  ______    
+|_   __  ||_  _|    |_  _||_   _ `.  
+  | |_ \_|  \ \  /\  / /    | | `. \ 
+  |  _|      \ \/  \/ /     | |  | | 
+ _| |_        \  /\  /     _| |_.' / 
+|_____|        \/  \/     |______.'  
+
+I DON'T KNOW WHO YOU ARE.
+BUT I LOVE YOU, AND YOU MATTER.
+
+Fresh Web Designs
+© 2014 - 3001 ALL RIGHTS RESERVED.
+https://fwd.dev
+
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+
+      <link rel="icon" type="image/png" href="images/favicon.png" />
+      <title>Fresh Web Designs - Miami, Florida Software Company</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- <script src="https://unpkg.com/jquery/dist/jquery.min.js"></script> -->
+      <script src="https://nano.to/dist/vue.min.js"></script>
+      <script src="https://nano.to/dist/axios.min.js"></script>
+      <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
+
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-status-bar-style" content="black">
+      <meta name="apple-mobile-web-app-title" content="Fresh Web Designs">
+      <link rel="apple-touch-icon" href="Fresh Web Designs - Miami, Florida Software Company">
+
+      <meta property="og:title" content="Fresh Web Designs - Miami, Florida Software Company">
+      <meta property="og:image" content="images/cover.png">
+
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+
+      <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+      <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Anton|Archivo+Black|Pinyon+Script'>
+
+      <link rel="stylesheet" href="style.css">
+
+    </head>
+    <body>
+        <div id="app">
+          <div class="content" style="opacity: 0" :style="{ 'opacity': loading ? '0' : '1' }">
+
+            <div style="display:none">We specialize in Web Design, Software & Crypto/Blockchain connected apps, commonly referred to as DeFi applications.</div>
+            
+            <!-- partial:index.partial.html -->
+            <section class="content">
+               <div style="height: 100px;"></div>
+               <img style="max-width: 40px; margin-bottom: 10px;" src="https://fwd.dev/images/logo-colorful-small.png" alt="">
+               <!-- <div style="height: 80px"></div> -->
+               <p class="bottom" style="margin-top: 0">Fresh Web Designs</p>
+               <p class="top">Miami</p>
+               <h3 class="title">Miami, Florida Software Company</h3>
+               <div style="height:10px"></div>
+               <h3 class="title" style=" font-size: 16px; color: #ffffff; opacity: 1; ">EST. 2014</h3>
+               <div style="height: 90px"></div>
+            </section>
+
+            <section :class="`neon ${ block.portfolio ? 'portfolio' : '' }`" v-for="block in blocks">
+                <div class="title">{{ block.title }}</div>
+                <div class="cards">
+                  <div @click="preview(_block)" class="card" v-for="_block in block.blocks" :style="{ 'background-image': _block.background ? `url('${_block.background}')` : '', 'min-height': block.portfolio ? '200px' : '170px' }">
+                    <img v-if="!_block.background" :src="_block.icon" alt="" :class="{ 'round': _block.round }" :style="{ 'border-radius': _block.round ? '50%' : '' }">
+                    <span class="sub-title">{{ _block.title }}</span>
+                    <span v-if="_block.tag" class="sub-tag">{{ _block.tag }}</span>
+                    <div v-if="_block.images" style="display: none; opacity: 0">
+                      <a v-for="i in _block.images.slice(1, 999)" data-fancybox="gallery-4" :href="i"></a>
+                    </div>
+                  </div>
+                </div>
+            </section>
+
+            <section class="neon contact">
+              <div class="title">Contact Us</div>
+              <br>
+              <br>
+              <br>
+              <div style="display: flex; justify-content: space-between;">
+              <a target="_blank" href="https://www.instagram.com/freshwebdesigns/" style="display: block; max-width: 45px; margin: 0 auto;">
+                <img src="images/instagram.png" style="width: 100%;" alt="">
+              </a>
+              <a target="_blank" href="https://codepen.io/formsend" style="display: block; max-width: 45px; margin: 0 auto;">
+                <img src="images/codepen.png" style="width: 100%;" alt="">
+              </a>
+              <a target="_blank" href="https://www.github.com/fwd/" style="display: block; max-width: 45px; margin: 0 auto;">
+                <img src="images/github.png" style="width: 100%;" alt="">
+              </a>
+              </div>
+              <br>
+              <br>
+              <!-- <span style="opacity: 0.5;text-align: center;width: 100%;display: block;text-transform: uppercase;letter-spacing: 1px;font-size: 12px;margin: 15px 0;text-shadow: 1px 1px 0px #e6269d;margin-bottom: 10px; line-height: 18px">© Fresh Web Designs</span> -->
+              <br>
+              <!-- <br> -->
+            </section>
+            
+          </div>
+
+           <div id="sun"></div>
+
+          <section class="lighth">
+             <section class="lightv"></section>
+             <!-- <section class="lightv" :style="{ 'color': color || '#e5279d' }"></section> -->
+          </section>
+        </div>
+
+        <script>
+          // setTimeout(function(){
+            var app = new Vue({
+              el: '#app',
+              data: {
+
+                showGlobe: false, 
+
+                loading: true,
+
+                color: false,
+                
+                player: null,
+
+                music: false,
+
+                blocks: [
+
+                  {
+                    title: "Built by us",
+                    portfolio: true,
+                    blocks: [
+                  
+
+                      // {
+                      //   background: "images/nano.png",
+                      //   title: "Nano.to",
+                      //   link: "https://nano.to"
+                      // },
+
+                      {
+                        background: "images/formsend.png",
+                        title: 'Formsend.com',
+                        link: "https://formsend.org",
+                        // title: 'Developer API',
+                      },
+         
+                     {
+                        background: "images/pages-new.png",
+                        // title: "Website Platform",
+                        link: "https://pages.miami",
+                        title: "Pages.Miami",
+                      },
+
+                      // {
+                      //   background: "images/eats.png",
+                      //   // title: "QR Code Menu",
+                      //   link: "https://eats.miami",
+                      //   title: "Eats.Miami",
+                      // },
+
+                      {
+                        background: "images/nano.png",
+                        title: 'Nano.to',
+                        link: "https://nano.to",
+                        // title: 'Developer API',
+                      },
+
+                    ]
+                  },
+
+                  // {
+                  //   title: "COMMISSIONED",
+                  //   portfolio: true,
+                  //   blocks: [
+
+                  //     {
+                  //       background: "images/platforms/nanogram.png",
+                  //       title: "NanoGram.ai",
+                  //       // title: "DeFi Social Media",
+                  //       link: "https://nanogram.ai"
+                  //     },
+
+                  //     {
+                  //       background: "images/platforms/pythas.png",
+                  //       title: "Pythas OTC",
+                  //       link: "https://account.pythascapital.com/#/login"
+                  //     },
+
+                  //   ]
+                  // },
+
+                  {
+                    title: "Services",
+                    blocks: [
+
+
+                      {
+                        icon: "images/design.png",
+                        title: "Concept & Web Design"
+                      },
+              
+                      {
+                        icon: "images/software.png",
+                        title: "Software Development"
+                      },   
+
+                      {
+                        icon: "images/servers.png",
+                        title: "Application Hosting"
+                      },
+
+                      {
+                        icon: "images/wordpress.png",
+                        title: "Wordpress Hosting"
+                      },
+
+                      {
+                        icon: "images/code.png",
+                        title: "Blockchain Development"
+                      },
+
+                      {
+                        icon: "images/consulting.png",
+                        title: "Digital Consulting"
+                      },
+                      
+                    ]
+                  },
+
+                ]
+
+              },
+              mounted() {
+                this.shuffle()
+                // this.loadWork(() => {
+                  this.loading = false
+                // })
+                // jic
+                setTimeout(() => {
+                  this.loading = false
+                  this.showGlobe = true
+                  this.$forceUpdate()
+                }, 3000)
+              },
+              methods: {
+                shuffle() {
+                  var tracks = [ 
+                    '/music/space.mp3', // my favorite
+                    '/music/synthwave.mp3', 
+                    '/music/accelerated.mp3'
+                  ]
+                  var selected = tracks[Math.floor(Math.random() * tracks.length)];
+                  this.player = new Audio(selected)
+                  this.player.onended = () => {
+                    this.shuffle()
+                    this.player.play()
+                      // alert("The audio has ended");
+                  }
+                },
+                preview(item) {
+                  // console.log(item)
+                  if (item.link) {
+                    return window.open(item.link, '_blank').focus();
+                  }
+                  $.fancybox.open(item.images.map(a => {
+                    return {
+                      src: a,
+                      opts : {
+                        caption : item.category,
+                      }
+                    }
+                  }), {
+                    loop : false
+                  });
+                },
+                loadWork(cb) {
+                  var self = this
+                  axios.get('/work').then(function(res) {
+                    var works = res.data
+                    self.blocks.unshift({
+                      title: "Recent Work",
+                      portfolio: true,
+                      blocks: works.map(a => {
+                        return {
+                          round: true,
+                          title: a.title,
+                          images: a.images,
+                          category: a.category,
+                          description: a.description,
+                          background: a.images[0]
+                        }
+                      })
+                    })
+                    if (cb) cb()
+                  })
+                },
+                toggleMusic() {
+                  var self = this
+                  // var change = setInterval(() => {
+                  //   self.color = colors[Math.floor(Math.random() * colors.length)]
+                  // }, 1000)
+                  if (!this.music) {
+                    var colors = [ '#2980b9', '#e74c3c', '#8e44ad', '#f39c12' ]
+                    this.player.play()
+                  } else {
+                    // self.color = false
+                    this.player.pause()
+                    // clearInterval(change)
+                  }
+                  this.music = !this.music
+                  // var aud = document.getElementById("myAudio");
+                }
+              }
+            })
+          // }, 500)
+        </script>
+
+
+    </body>
+</html>
