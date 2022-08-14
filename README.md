@@ -17,6 +17,11 @@ Axios
 <script src="https://fwd.dev/js/axios.js"></script>
 ```
 
+QrCode 
+```
+<script src="https://fwd.dev/js/qrcode.js"></script>
+```
+
 ## Contributing
 
 Give a ⭐️ if this project helped you!
