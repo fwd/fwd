@@ -375,7 +375,7 @@ window.Cart = {
 	setUpCSS() {
 		var head = document.getElementsByTagName('head')[0];
 		var style = document.createElement('link');
-			style.href = '<%- host %>/cart.css';
+			style.href = 'https://fwd.dev/css/cart.css';
 			style.type = 'text/css';
 			style.rel = 'stylesheet';
 			head.append(style);
@@ -386,14 +386,14 @@ window.Cart = {
 				var head = document.getElementsByTagName('head')[0];
 				var script = document.createElement('script');
 				script.type = 'text/javascript';
-				script.src = 'https://unpkg.com/axios/dist/axios.min.js';
+				script.src = 'https://fwd.dev/js/axios.js';
 				head.appendChild(script);
 			}
 			if (typeof Vue === 'undefined') {
 				var head = document.getElementsByTagName('head')[0];
 				var script = document.createElement('script');
 				script.type = 'text/javascript';
-				script.src = 'https://unpkg.com/vue@2.6.11/dist/vue.min.js';
+				script.src = 'https://fwd.dev/js/vue.js';
 				head.appendChild(script);
 			}
 			setTimeout(function() {
