@@ -47,7 +47,7 @@ window.Cart = {
 
 		    		self.loading = true
 
-		    		axios.post('<%- host %>/checkout', {
+		    		axios.post(self.config.success, {
 		    			accountId: self.config.accountId,
 		    			line_items: this.cart,
 		    			success_url: self.config.successUrl || window.location.origin + window.location.pathname,
@@ -80,7 +80,7 @@ window.Cart = {
 								self.view = 'no_active'
 								
 								setTimeout(function() {
-									self.getStatus()
+									// self.getStatus()
 								}, 5000)
 
 							} else {
@@ -156,7 +156,7 @@ window.Cart = {
 		    			return
 		    		}
 
-		    		self.getStatus()
+		    		// self.getStatus()
 
 		    	},
 
