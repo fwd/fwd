@@ -22,16 +22,6 @@ QrCode
 <script src="//fwd.dev/js/qrcode.js"></script>
 ```
 
-## Contributing
-
-Give a ⭐️ if this project helped you!
-
-Contributions, issues and feature requests are welcome at [issues page](https://github.com/fwd/fwd/issues).
-
-Questions about licensing? Email: hello[@]nano.to
+Questions about consulting? Email: hello[@]fwd.dev
 
 Copyright © [nano2dev](https://twitter.com/nano2dev).
-
-## Stargazers
-
-[![Stargazers over time](https://starchart.cc/fwd/fwd.svg)](https://github.com/fwd/fwd)
