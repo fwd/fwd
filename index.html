@@ -42,6 +42,8 @@ https://fwd.dev
      
       <script src="https://metrics.bar/js/script.js" id="better-analytics" async defer></script>
 
+      <script src="https://formsend.org/form.js"></script>
+
     </head>
     <body>
         <div id="app">
@@ -56,7 +58,7 @@ https://fwd.dev
                <!-- <div style="height: 80px"></div> -->
                <p class="bottom" style="margin-top: 0">Fresh Web Designs</p>
                <p class="top">Miami</p>
-               <h3 class="title">Software Consultancy</h3>
+               <h3 class="title">Software CONSULTANCY</h3>
                <div style="height:10px"></div>
                <h3 class="title" style=" font-size: 16px; color: #ffffff; opacity: 1; ">EST. 2014</h3>
                <div style="height: 90px"></div>
@@ -78,11 +80,20 @@ https://fwd.dev
 
             <section v-if="true" class="neon contact">
               <div class="title">Contact Us</div>
-              <br>
-              <br>
-              <a href="mailto:hello@fwd.dev" style=" text-align: center; font-size: 30px; font-family: monospace; letter-spacing: 1px; border-bottom: solid; width: fit-content; margin: 0 auto; margin: 0 auto 20px auto; ">hello@fwd.dev</a>
-              <br>
-              <br>
+              
+              <form class="form" onsubmit="send(this); return false">
+                <input type="text" style="opacity: 0; display: none;" name="fname" value="">
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="text" name="Company" placeholder="Company Name (optional)">
+                <input type="email" name="Email" placeholder="Your Email" required>
+                <select value="General" required name="Subject">
+                  <!-- <option selected value="General">General</option> -->
+                  <option :value="i.title" v-for="i in blocks.find(a => a.title === 'Services').blocks">{{ i.title }}</option>
+                  <option value="Other">Other</option>
+                </select>
+                <textarea name="message" id="" cols="30" rows="10" placeholder="Describe Project" required></textarea>
+                <button type="submit" class="contact-btn">Send Form</button>
+              </form>
               
             </section>
             
@@ -97,12 +108,41 @@ https://fwd.dev
         </div>
 
         <script>
+          window.send = function(form) {
+            // console.log(  )
+                if (form[0].value) return form.reset()
+               Form.send({
+                 form: form,
+                 notify: 'hello@fwd.dev',
+                 key: "public-67d28628c4cf4d",
+                 success: (success) => {
+                    // message.style.display = "block";
+                    // message.innerHTML = 'Sent! We will be in touch soon. Thank you.'
+                    // button.innerHTML = "Done"
+                    form.reset()
+                    setTimeout(() => {
+                      window.alert('Sent. We will be in contact shortly.')
+                    }, 100)
+                 },
+                 error: (error) => {
+                  // button.setAttribute("disabled", "false");
+                  // message.innerHTML = response.message
+                  // message.innerHTML = 'Sorry, we\'re having issues with our website. Please send us an email to <a href="mailto:puppycity18@gmail.com">puppycity18@gmail.com</a>, with your message. Apologies for the inconvenience. '
+                  // message.style.display = "block";
+                 },
+              })
+          }
+      </script>
+
+        <script>
           // setTimeout(function(){
             var app = new Vue({
               el: '#app',
               data: {
 
                 showGlobe: false, 
+
+                send: window.send,
 
                 loading: true,
 
@@ -133,10 +173,10 @@ https://fwd.dev
                       },
          
                      {
-                        background: "img/pages-new.png",
+                        background: "img/metrics.png",
                         // title: "Website Platform",
-                        link: "https://pages.miami",
-                        title: "Pages.Miami",
+                        link: "https://metrics.bar",
+                        title: "Metrics.Bar",
                       },
 
                       // {
@@ -184,32 +224,32 @@ https://fwd.dev
 
                       {
                         icon: "img/design.png",
-                        title: "Concept & Web Design"
+                        title: "Custom Software"
                       },
               
                       {
                         icon: "img/software.png",
-                        title: "Software Development"
+                        title: "Software Auditing"
                       },   
-
-                      {
-                        icon: "img/servers.png",
-                        title: "Application Hosting"
-                      },
-
-                      {
-                        icon: "img/wordpress.png",
-                        title: "Wordpress Hosting"
-                      },
-
+                     
                       {
                         icon: "img/code.png",
                         title: "Blockchain Development"
                       },
 
                       {
+                        icon: "img/servers.png",
+                        title: "Cloud Onboarding"
+                      },
+
+                      {
+                        icon: "img/wordpress.png",
+                        title: "Landing Pages & SEO"
+                      },
+
+                      {
                         icon: "img/consulting.png",
-                        title: "Digital Consulting"
+                        title: "Business Consulting"
                       },
                       
                     ]
