@@ -84,11 +84,12 @@ https://fwd.dev
               <form class="form" onsubmit="send(this); return false">
                 <input type="text" style="opacity: 0; display: none;" name="fname" value="">
                 <input type="text" name="Name" placeholder="Your Name" required>
-                <input type="text" name="Company" placeholder="Company Name (optional)">
+                <input type="text" name="Company" placeholder="Company (optional)">
                 <input type="email" name="Email" placeholder="Your Email" required>
                 <select value="General" required name="Subject">
                   <!-- <option selected value="General">General</option> -->
                   <option :value="i.title" v-for="i in blocks.find(a => a.title === 'Services').blocks">{{ i.title }}</option>
+                  <option value="Other">API Usage</option>
                   <option value="Other">Other</option>
                 </select>
                 <textarea name="message" id="" cols="30" rows="10" placeholder="Describe Project" required></textarea>

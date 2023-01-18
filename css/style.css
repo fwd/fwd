@@ -403,11 +403,10 @@ a {
     min-height: 40px;
     padding: 10px;
     background: transparent;
-    border: 2px solid #e6269d;
+    border: 4px solid #e6269d;
     border-radius: 5px;
     appearance: none;
     color: #FFF;
-
 }
 
 .contact-btn {
@@ -422,4 +421,5 @@ a {
     margin-bottom: 10px;
     color: #FFF;
     font-weight: bold;
+    width: 100%;
 }
