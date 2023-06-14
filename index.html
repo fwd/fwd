@@ -36,7 +36,7 @@ https://fwd.dev
 
       <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Anton|Archivo+Black|Pinyon+Script'>
 
-      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/style.css?v=1">
      
       <script src="https://metrics.bar/js/script.js" id="metrics" async defer></script>
 
@@ -58,7 +58,7 @@ https://fwd.dev
                <p class="top">Miami, Florida</p>
                <h3 class="title">Software CONSULTANCY</h3>
                <div style="height:10px"></div>
-               <h3 class="title" style=" font-size: 16px; color: #ffffff; opacity: 1; ">EST. 2014</h3>
+               <h3 class="title" style=" font-size: 16px; opacity: 1; ">EST. 2014</h3>
                <div style="height: 90px"></div>
             </section>
 
@@ -87,7 +87,7 @@ https://fwd.dev
                 <select value="General" required name="Subject">
                   <!-- <option selected value="General">General</option> -->
                   <option :value="i.title" v-for="i in blocks.find(a => a.title === 'Services').blocks">{{ i.title }}</option>
-                  <option value="Other">API Usage</option>
+                  <!-- <option value="Other">API Usage</option> -->
                   <option value="Other">Other</option>
                 </select>
                 <textarea name="message" id="" cols="30" rows="10" placeholder="Describe Project" required></textarea>
@@ -152,47 +152,6 @@ https://fwd.dev
 
                 blocks: [
 
-                  {
-                    title: "Platforms",
-                    portfolio: true,
-                    blocks: [
-
-                      // {
-                      //   background: "img/nano.png",
-                      //   title: "Nano.to",
-                      //   link: "https://nano.to"
-                      // },
-
-                      {
-                        background: "img/formsend.png",
-                        title: 'Formsend.org',
-                        link: "https://formsend.org",
-                        // title: 'Developer API',
-                      },
-         
-                     {
-                        background: "img/metrics.png",
-                        // title: "Website Platform",
-                        link: "https://metrics.bar",
-                        title: "Metrics.Bar",
-                      },
-
-                      // {
-                      //   background: "img/eats.png",
-                      //   // title: "QR Code Menu",
-                      //   link: "https://eats.miami",
-                      //   title: "Eats.Miami",
-                      // },
-
-                      {
-                        background: "img/nano.png",
-                        title: 'Nano.to',
-                        link: "https://nano.to",
-                        // title: 'Developer API',
-                      },
-
-                    ]
-                  },
 
                   // {
                   //   title: "COMMISSIONED",
@@ -222,14 +181,19 @@ https://fwd.dev
 
                       {
                         icon: "img/design.png",
-                        title: "Custom Software"
+                        title: "Website Design"
                       },
               
                       {
                         icon: "img/software.png",
-                        title: "Software Auditing"
+                        title: "Software Development"
                       },   
                      
+                      {
+                        icon: "img/code.png",
+                        title: "Mobile Development"
+                      },
+
                       {
                         icon: "img/code.png",
                         title: "Blockchain Development"
@@ -237,19 +201,61 @@ https://fwd.dev
 
                       {
                         icon: "img/servers.png",
-                        title: "Cloud Onboarding"
+                        title: "Data Migration"
                       },
 
-                      {
-                        icon: "img/wordpress.png",
-                        title: "Landing Pages & SEO"
-                      },
+                      // {
+                      //   icon: "img/wordpress.png",
+                      //   title: "Landing Pages & SEO"
+                      // },
 
                       {
                         icon: "img/consulting.png",
-                        title: "Business Consulting"
+                        title: "Software Consulting"
                       },
                       
+                    ]
+                  },
+
+                  {
+                    title: "Platforms",
+                    portfolio: true,
+                    blocks: [
+
+                      // {
+                      //   background: "img/nano.png",
+                      //   title: "Nano.to",
+                      //   link: "https://nano.to"
+                      // },
+
+                      {
+                        background: "img/formsend.png",
+                        title: 'Formsend',
+                        link: "https://formsend.org",
+                        // title: 'Developer API',
+                      },
+         
+                     {
+                        background: "img/metrics.png",
+                        // title: "Website Platform",
+                        link: "https://metrics.bar",
+                        title: "Metrics.Bar",
+                      },
+
+                      // {
+                      //   background: "img/eats.png",
+                      //   // title: "QR Code Menu",
+                      //   link: "https://eats.miami",
+                      //   title: "Eats.Miami",
+                      // },
+
+                      {
+                        background: "img/nano.png",
+                        title: 'Nano.to',
+                        link: "https://github.com/fwd/nano-to",
+                        // title: 'Developer API',
+                      },
+
                     ]
                   },
 
