@@ -12,7 +12,7 @@ https://fwd.dev
     <head>
 
       <link rel="icon" type="image/png" href="img/favicon.png" />
-      <title>Fresh Web Designs - Software Shop</title>
+      <title>Fresh - Software</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- <script src="https://unpkg.com/jquery/dist/jquery.min.js"></script> -->
@@ -22,10 +22,10 @@ https://fwd.dev
 
       <meta name="apple-mobile-web-app-capable" content="yes">
       <meta name="apple-mobile-web-app-status-bar-style" content="black">
-      <meta name="apple-mobile-web-app-title" content="Fresh Web Designs">
-      <link rel="apple-touch-icon" href="Fresh Web Designs - Software Company">
+      <meta name="apple-mobile-web-app-title" content="FWD">
+      <link rel="apple-touch-icon" href="FWD - Software Co.">
 
-      <meta property="og:title" content="Fresh Web Designs - Software Company">
+      <meta property="og:title" content="FWD - Software Co.">
       <meta property="og:image" content="img/cover.png">
 
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
@@ -47,7 +47,7 @@ https://fwd.dev
         <div id="app">
           <div class="content" style="opacity: 0" :style="{ 'opacity': loading ? '0' : '1' }">
 
-            <div style="display:none">Web Design, Software & Blockchain connected dApps, commonly referred to as decentralized financial applications.</div>
+            <!-- <div style="display:none">Solid Open Source Software</div> -->
             
             <!-- partial:index.partial.html -->
             <section class="content">
@@ -56,7 +56,7 @@ https://fwd.dev
                <!-- <div style="height: 80px"></div> -->
                <p class="bottom" style="margin-top: 0">Fresh Web Designs</p>
                <p class="top">Miami, Florida</p>
-               <h3 class="title">Quality Software</h3>
+               <h3 class="title">Really Good Software</h3>
                <div style="height:10px"></div>
                <h3 class="title" style=" font-size: 16px; opacity: 1; ">SINCE. 2014</h3>
                <div style="height: 90px"></div>
@@ -67,7 +67,7 @@ https://fwd.dev
                 <div class="cards">
                   <div @click="preview(_block)" class="card" v-for="_block in block.blocks" :style="{ 'background-image': _block.background ? `url('${_block.background}')` : '', 'min-height': block.portfolio ? '200px' : '170px' }">
                     <img v-if="!_block.background" :src="_block.icon" alt="" :class="{ 'round': _block.round }" :style="{ 'border-radius': _block.round ? '50%' : '' }">
-                    <span class="sub-title">{{ _block.title }}</span>
+                    <span class="sub-title" :style="`background-color: ${_block.color ? _block.color : ''}`">{{ _block.title }}</span>
                     <span v-if="_block.tag" class="sub-tag">{{ _block.tag }}</span>
                     <div v-if="_block.images" style="display: none; opacity: 0">
                       <a v-for="i in _block.images.slice(1, 999)" data-fancybox="gallery-4" :href="i"></a>
@@ -229,9 +229,10 @@ https://fwd.dev
                       // },
 
                       {
-                        background: "img/formsend.png",
-                        title: 'Formsend',
-                        link: "https://formsend.org",
+                        color: "#4cba31",
+                        background: "img/menu.png",
+                        title: 'Menu.Miami',
+                        link: "https://menu.miami",
                         // title: 'Developer API',
                       },
          
