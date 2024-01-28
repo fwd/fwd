@@ -80,7 +80,6 @@ https://fwd.dev
               <div class="title">Contact Us</div>
               
               <form class="form" onsubmit="send(this); return false">
-                <input type="text" style="opacity: 0; display: none;" name="fname" value="">
                 <input type="text" name="Name" placeholder="Your Name" required>
                 <input type="text" name="Company" placeholder="Company (optional)">
                 <input type="email" name="Email" placeholder="Your Email" required>
@@ -107,6 +106,25 @@ https://fwd.dev
         </div>
     
         <script>
+     
+           window.track_conversion = function() {
+    
+            const postData = { event: 'Form Submission' };
+            
+            fetch('https://api.metrics.bar/event', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(postData)
+            }).then(response => response.json()).then(data => {
+                console.log(data);
+            }).catch(error => {
+                console.error('Error:', error);
+            });
+    
+          }
+
           window.send = function(form) {
             // console.log(  )
                 if (form[0].value) return form.reset()
@@ -117,10 +135,11 @@ https://fwd.dev
                     // message.style.display = "block";
                     // message.innerHTML = 'Sent! We will be in touch soon. Thank you.'
                     // button.innerHTML = "Done"
-                    form.reset()
                     setTimeout(() => {
-                      window.alert('Sent. We will be in contact shortly.')
+                      window.alert('Sent.')
+                      form.reset()
                     }, 100)
+                    window.track_conversion()
                  },
                  error: (error) => {
                   // button.setAttribute("disabled", "false");
